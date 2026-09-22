@@ -1,0 +1,43 @@
+{
+  "name": "vrcmanagerx",
+  "productName": "VRCManagerX",
+  "version": "1.0.0",
+  "description": "VRChat invite whitelist / blacklist manager for the Ask Me status",
+  "main": "./out/main/index.js",
+  "author": "VRCManagerX",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "dev": "electron-vite dev",
+    "build": "electron-vite build",
+    "start": "electron-vite preview",
+    "typecheck": "tsc --noEmit -p tsconfig.node.json && tsc --noEmit -p tsconfig.web.json",
+    "test": "vitest run",
+    "preview:ui": "vite --config vite.ui-preview.config.ts",
+    "icons": "node scripts/generate-icons.mjs",
+    "dist": "npm run build && electron-builder --win --config electron-builder.yml",
+    "dist:dir": "npm run build && electron-builder --win --dir --config electron-builder.yml"
+  },
+  "dependencies": {
+    "ws": "^8.21.3",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@fontsource-variable/inter": "^5.3.0",
+    "@fontsource-variable/jetbrains-mono": "^5.2.8",
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@types/ws": "^8.18.1",
+    "@vitejs/plugin-react": "^5.2.0",
+    "electron": "^44.4.4",
+    "electron-builder": "^26.15.3",
+    "electron-vite": "^5.0.0",
+    "lucide-react": "^1.47.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "typescript": "~5.9.3",
+    "vite": "^7.3.6",
+    "vitest": "^5.0.1"
+  }
+}

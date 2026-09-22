@@ -1,0 +1,37 @@
+appId: com.vrcmanagerx.app
+productName: VRCManagerX
+executableName: VRCManagerX
+directories:
+  buildResources: build
+  output: dist
+files:
+  - out/**/*
+  - package.json
+  - '!out/.tsc-*/**'
+extraResources:
+  - from: resources/
+    to: resources/
+win:
+  icon: build/icon.ico
+  target:
+    - target: nsis
+      arch: [x64]
+    - target: portable
+      arch: [x64]
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  artifactName: VRCManagerX-Setup-${version}.${ext}
+  shortcutName: VRCManagerX
+portable:
+  artifactName: VRCManagerX-Portable-${version}.${ext}
+asar: true
+electronFuses:
+  runAsNode: false
+  enableCookieEncryption: true
+  enableNodeOptionsEnvironmentVariable: false
+  enableNodeCliInspectArguments: false
+  enableEmbeddedAsarIntegrityValidation: true
+  onlyLoadAppFromAsar: true
+npmRebuild: false
